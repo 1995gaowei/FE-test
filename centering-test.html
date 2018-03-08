@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .seg {
+            margin-bottom: 20px;
+        }
+
+        .parent {
+            height: 200px;
+            background-color: aliceblue;
+        }
+
+        .child {
+            width: 50%;
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="seg">
+        <h2>Absolute Centering</h2>
+        <div class="parent" style="position: relative">
+            <div class="child" style="height: 50%; position: absolute; margin: auto; top: 0; left: 0; right: 0; bottom: 0;"></div>
+        </div>
+    </div>
+
+    <div class="seg">
+        <h2>Transform</h2>
+        <div class="parent" style="position: relative">
+            <div class="child" style="width: 50%; margin: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">test</div>
+        </div>
+    </div>
+
+    <div class="seg">
+        <h2></h2>
+    </div>
+</body>
+
+</html>
