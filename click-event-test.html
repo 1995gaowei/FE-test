@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+
+	<style>
+		#l1,
+		#l2,
+		#l3 {
+			height: 100px;
+		}
+
+		#l1 {
+			width: 100%;
+			background-color: aqua;
+		}
+
+		#l2 {
+			width: 50%;
+			background-color: brown;
+		}
+
+		#l3 {
+			width: 50%;
+			background-color: blueviolet;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="l1">
+		<div id="l2">
+			<div id="l3">
+
+			</div>
+		</div>
+	</div>
+
+	<script>
+		var l1 = document.getElementById('l1');
+		var l2 = document.getElementById('l2');
+		var l3 = document.getElementById('l3');
+
+		// l1.onclick = function() {
+		// 	console.log('click l1')
+		// }
+		// l2.onclick = function() {
+		// 	console.log('click l2')
+		// }
+		// l3.onclick = function() {
+		// 	console.log('click l3')
+		// }
+
+		l1.addEventListener('click', function() {
+			console.log('click l1 e1');
+		}, false);
+		l2.addEventListener('click', function() {
+			console.log('click l2');
+		}, false);
+		l3.addEventListener('click', function() {
+			console.log('click l3');
+			// event.stopPropagation();
+			return false;
+		}, false);
+		l1.addEventListener('click', function() {
+			console.log('click l1 e2');
+		}, false);
+	</script>
+</body>
+
+</html>

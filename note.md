@@ -1,5 +1,12 @@
 # HTML
 
+- 事件
+    1. DOM0级事件，由JavaScript指定事件处理程序，冒泡阶段被处理
+        ```
+        element.onclick = () => { console.log('click) }
+        ```
+    2. DOM2级事件，定义了2个方法，addEventListener()和removeEventListener()，3个参数：要处理的事件名，回调，布尔（true：捕获阶段，false：冒泡阶段）；可以添加多个事件处理程序
+
 # CSS
 
 - 继承属性 （font, text-align, line-height, color, visibility, cursor...）
