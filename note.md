@@ -13,9 +13,17 @@
 
 # JS
 
+- 基本类型和引用类型
+    1. 访问变量有按值和按引用两种方式，而参数只能按值传递
+    2. 基本数据类型检测用typeof，引用类型使用instanceof操作符
+
 - 作用域
 - this
 - 闭包
+- 面向对象
+    1. - 数据属性：configurable, enumerable, value, writable
+        - 访问器属性：configurable, enumerable, get, set
+    2. 
 - ===运算符判断相等的流程是怎样的
     1. 如果两个值不是相同类型，它们不相等
     2. 如果两个值都是null或者都是undefined，它们相等
