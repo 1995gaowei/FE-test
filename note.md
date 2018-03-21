@@ -19,11 +19,27 @@
 
 - 作用域
 - this
-- 闭包
+- 闭包，有权访问另一个函数作用域中的变量的函数
+
 - 面向对象
     1. - 数据属性：configurable, enumerable, value, writable
         - 访问器属性：configurable, enumerable, get, set
-    2. 
+    2.  继承
+        - 原型链：重写原型对象，代之以一个新类型的实例
+            ```
+            SubType.prototype  = new SuperType()
+            ```
+            问题：包含引用类型值的原型，不能向超类型的构造函数传递参数。
+        - 借用构造函数，在子类型构造函数内部调用超类型构造函数
+            ```
+            function SubType() {
+                SuperType.call(this)
+            }
+            ```
+            问题：不能函数复用
+        - 组合继承，将原型链和借用构造函数的技术组合
+        - 寄生组合式继承
+
 - ===运算符判断相等的流程是怎样的
     1. 如果两个值不是相同类型，它们不相等
     2. 如果两个值都是null或者都是undefined，它们相等
