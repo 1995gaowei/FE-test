@@ -112,3 +112,18 @@
     6. localStorage的修改会促发其他文档窗口的update事件
     7. cookie有secure属性要求HTTPS传输
     8. 浏览器不能保存超过300个cookie，单个服务器不能超过20个，每个cookie不能超过4k。web storage大小支持能达到5M
+
+- 阻止冒泡和默认事件
+    1. 冒泡：e.stopPropagation,IE下为cancelBubble=true
+    2. 默认事件，e.preventDefault(),e.returnValue=false,return false(用来取消对象属性注册的处理程序)
+
+# Web安全
+
+- XSS （跨站脚本攻击）
+
+- CSRF （跨站点请求伪造）
+
+- HTTPS （HTTP+SSL）
+    1. 通信加密
+    2. 证书认证
+    3. 完整性保护
