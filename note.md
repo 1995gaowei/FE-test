@@ -23,7 +23,7 @@
 
 - 面向对象
     1. - 数据属性：configurable, enumerable, value, writable
-        - 访问器属性：configurable, enumerable, get, set
+        - 访问器属性：configurable, enumerable, get, set。用于设置一个属性导致其他属性发生变化。
     2.  继承
         - 原型链：重写原型对象，代之以一个新类型的实例
             ```
@@ -127,3 +127,18 @@
     1. 通信加密
     2. 证书认证
     3. 完整性保护
+
+
+# Vue
+
+> 由于 JavaScript 的限制，Vue 不能检测以下变动的数组：
+> 1. 当你利用索引直接设置一个项时，例如：vm.items[indexOfItem] = newValue
+> 2. 当你修改数组的长度时，例如：vm.items.length = newLength
+
+> 注意在 JavaScript 中对象和数组是通过引用传入的，所以对于一个数组或对象类型的 prop 来说，在子组件中改变这个对象或数组本身将会影响到父组件的状态。
+
+> 注意那些 prop 会在一个组件实例创建之前进行验证，所以实例的属性 (如 data、computed 等) 在 default 或 validator 函数中是不可用的。
+
+> 有了 inheritAttrs: false 和 $attrs，你就可以手动决定这些特性会被赋予哪个元素。
+
+> 将 v-bind.sync 用在一个字面量的对象上，例如 v-bind.sync=”{ title: doc.title }”，是无法正常工作的，因为在解析一个像这样的复杂表达式的时候，有很多边缘情况需要考虑。
