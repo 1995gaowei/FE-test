@@ -142,3 +142,14 @@
 > 有了 inheritAttrs: false 和 $attrs，你就可以手动决定这些特性会被赋予哪个元素。
 
 > 将 v-bind.sync 用在一个字面量的对象上，例如 v-bind.sync=”{ title: doc.title }”，是无法正常工作的，因为在解析一个像这样的复杂表达式的时候，有很多边缘情况需要考虑。
+
+# 模块
+ 
+- Commonjs
+    1. module.exports & require
+    2. 同步加载方案
+
+- AMD
+    1. require([module], callback) & define(id?, dependencies?, factory)
+    2. 异步模块定义
+    3. 任何全局函数必须有一个amd属性来标识遵循AMD编程接口
