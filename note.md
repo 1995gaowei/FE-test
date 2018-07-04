@@ -53,10 +53,33 @@
 
   - 在函数执行过程中，this 一旦被确定，就不可更改了。
   - 如果调用者函数，被某一个对象所拥有，那么该函数在调用时，内部的 this 指向该对象。如果函数独立调用，那么该函数内部的 this，则指向 undefined。但是在非严格模式中，当 this 指向 undefined 时，它会被自动指向全局对象。
+  - call & apply
+    - 参数。call 以一个一个的形式传递，apply 以数组的形式传递。
+  - bind
 
 - 闭包，有权访问另一个函数作用域中的变量的函数
 
   - 柯里化
+    - 柯里化是指这样一个函数(假设叫做 createCurry)，他接收函数 A 作为参数，运行后能够返回一个新的函数。并且这个新的函数能够处理函数 A 的剩余参数。
+    ```
+    //  通用的函数柯里化构造方法
+    function curry(func){
+      //新建args保存参数，注意，第一个参数应该是要柯里化的函数，所以args里面去掉第一个
+      var args = [].slice.call(arguments,1);
+      //新建_func函数作为返回值
+      var _func =  function(){
+        //参数长度为0，执行func函数，完成该函数的功能
+        if(arguments.length === 0){
+          return func.apply(this,args);
+        }else {
+          //否则，存储参数到闭包中，返回本函数
+          [].push.apply(args,arguments);
+          return _func;
+        }
+      }
+      return _func;
+    }
+    ```
   - 模块化
 
 - 面向对象
