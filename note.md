@@ -233,6 +233,11 @@
   2.  同步加载方案
 
 - AMD
+
   1.  require([module], callback) & define(id?, dependencies?, factory)
   2.  异步模块定义
   3.  任何全局函数必须有一个 amd 属性来标识遵循 AMD 编程接口
+  4.  例，RequireJS, curl.js
+
+- CMD
+  1.  例，SeaJS
