@@ -114,8 +114,11 @@
 
 - event-loop
 
-  - 宏任务 -> 执行栈 -> 微任务
-  - 一个线程中，事件循环是唯一的，但是任务队列可以拥有多个。
+  - 一个事件循环(event loop)会有一个或多个任务队列(task queue) task queue 就是 macrotask queue
+  - 每一个 event loop 都有一个 microtask queue
+
+  - macro-task 大概包括：script(整体代码), setTimeout, setInterval, setImmediate, I/O, UI rendering。
+  - micro-task 大概包括: process.nextTick, Promise, Object.observe(已废弃), MutationObserver(html5 新特性)
 
 - ===运算符判断相等的流程是怎样的
 
