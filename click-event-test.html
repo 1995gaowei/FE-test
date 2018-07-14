@@ -55,18 +55,18 @@
 		// 	console.log('click l3')
 		// }
 
-		l1.addEventListener('click', function() {
+		l1.addEventListener('click', function () {
 			console.log('click l1 e1');
 		}, false);
-		l2.addEventListener('click', function() {
+		l2.addEventListener('click', function () {
 			console.log('click l2');
-		}, false);
-		l3.addEventListener('click', function() {
+		}, true);
+		l3.addEventListener('click', function () {
 			console.log('click l3');
 			// event.stopPropagation();
 			return false;
 		}, false);
-		l1.addEventListener('click', function() {
+		l1.addEventListener('click', function () {
 			console.log('click l1 e2');
 		}, false);
 	</script>
