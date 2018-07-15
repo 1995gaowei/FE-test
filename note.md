@@ -1,11 +1,14 @@
 # HTML
 
 - 事件
+
   1.  DOM0 级事件，由 JavaScript 指定事件处理程序，冒泡阶段被处理
       ```
       element.onclick = () => { console.log('click) }
       ```
   2.  DOM2 级事件，定义了 2 个方法，addEventListener()和 removeEventListener()，3 个参数：要处理的事件名，回调，布尔（true：捕获阶段，false：冒泡阶段）；可以添加多个事件处理程序
+
+- iframe
 
 # CSS
 
@@ -199,10 +202,11 @@
   8.  浏览器不能保存超过 300 个 cookie，单个服务器不能超过 20 个，每个 cookie 不能超过 4k。web storage 大小支持能达到 5M
 
 - 阻止冒泡和默认事件
+
   1.  冒泡：e.stopPropagation,IE 下为 cancelBubble=true
   2.  默认事件，e.preventDefault(),e.returnValue=false,return false(用来取消对象属性注册的处理程序)
 
-- [JS经典面试题（牛客网）](https://www.nowcoder.com/ta/front-end-interview)
+- [JS 经典面试题（牛客网）](https://www.nowcoder.com/ta/front-end-interview)
 
 # Web 安全
 
