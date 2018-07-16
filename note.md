@@ -249,4 +249,17 @@
   4.  例，RequireJS, curl.js
 
 - CMD
-  1.  例，SeaJS
+  1.  例，SeaJS，推崇依赖就近
+
+# 异步
+
+- Promise
+- Generator 函数
+- async & await
+  - 优点
+    1.  简洁
+    2.  错误处理
+    3.  条件分支的可读性
+    4.  中间值
+    5.  异常堆栈
+    6.  调试
