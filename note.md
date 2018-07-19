@@ -206,6 +206,12 @@
   1.  冒泡：e.stopPropagation,IE 下为 cancelBubble=true
   2.  默认事件，e.preventDefault(),e.returnValue=false,return false(用来取消对象属性注册的处理程序)
 
+- 动画效果
+
+  - CSS。animation: name duration timing-function delay iteration-count direction;
+
+  - requestAnimationFrame()
+
 # Web 安全
 
 - XSS （跨站脚本攻击）
@@ -283,6 +289,12 @@
       1.  使用 React.createRef() 创建 refs,然后赋值给组件的 ref 属性，之后通过 ref 中的 current 属性对节点的引用进行访问
 
       2.  回调 ref，可以直接存储对于节点的引用
+
+- 类型检查
+
+  - import PropTypes from 'prop-types'
+
+  - Flow | TypeScript (静态类型检查器)
 
 # 模块
 

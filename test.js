@@ -57,7 +57,10 @@ setTimeout(function() {
 
 new Promise(function(resolve) {
   console.log("glob1_promise");
-  resolve();
+  setTimeout(function() {
+    console.log("promise1_timeout");
+    resolve();
+  }, 3000);
 }).then(function() {
   console.log("glob1_then");
 });
