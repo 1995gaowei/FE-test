@@ -1,0 +1,17 @@
+{
+  "name": "postcss-test",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "aGo",
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "postcss": "^7.0.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.0.1",
+    "cssnext": "^1.8.4",
+    "gulp-postcss": "^7.0.1",
+    "precss": "^3.1.2"
+  }
+}

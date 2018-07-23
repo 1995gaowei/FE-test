@@ -1,0 +1,40 @@
+@import "style1.css";
+/* test autoprefixer */
+.autoprefixer {
+  display: flex;
+}
+
+/* test cssnext */
+.cssnext {
+  background: color(red alpha(-10%));
+  will-change: auto;
+}
+
+/* test precss */
+.precss {
+  @if 3 < 5 {
+    background: green;
+  } @else {
+    background: blue;
+  }
+}
+
+.precss2 {
+  width: 100vw;
+  .test {
+    color: black;
+  }
+}
+
+@keyframes animation {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.animation {
+  animation: animation 0s;
+}

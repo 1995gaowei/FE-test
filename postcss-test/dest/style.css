@@ -1,0 +1,40 @@
+h1 {
+  display: flex;
+}
+/* test autoprefixer */
+.autoprefixer {
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* test cssnext */
+.cssnext {
+  background: color(red alpha(-10%));
+  will-change: auto;
+}
+
+/* test precss */
+.precss {
+    background: green
+}
+
+.precss2 {
+  width: 100vw;
+}
+
+.precss2 .test {
+    color: black;
+  }
+
+@keyframes animation {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.animation {
+  animation: animation 0s;
+}
