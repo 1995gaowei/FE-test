@@ -14,6 +14,37 @@
 
 - 继承属性 （font, text-align, line-height, color, visibility, cursor...）
 
+- BFC
+
+  - 如何形成
+
+    1.  根元素
+    2.  float 不为 none
+    3.  绝对定位的元素
+    4.  非块级元素具有 display: inline-block，table-cell, table-caption, flex, inline-flex
+    5.  块级元素具有 overflow，且不为 visible
+
+  - 用处
+
+    1.  清楚浮动
+    2.  布局，自适应两栏
+    3.  防止 margin 合并
+
+- BEM & SUIT
+
+  - Block\_\_Element--Modifier
+  - SUIT
+    - Utilities。用来处理结构和位置方面的样式，.u-驼峰
+    - Components。对应 Block,pascal 命名，可加命名空间，.nmsp-Component
+    - Descendants。对应 Element,-连接
+    - Modifier。只用于 Components，--连接
+    - State。is-前缀
+
+- Grid layout
+
+  - grid-template-columns(rows, areas), grid-gap;
+  - grid-column(row, area), fr 单位
+
 # JS
 
 - 基本类型和引用类型
