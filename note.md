@@ -45,6 +45,11 @@
   - grid-template-columns(rows, areas), grid-gap;
   - grid-column(row, area), fr 单位
 
+- Flex layout
+
+  - flex-direction, flex-wrap, flex-flow, justify-content, align-items, align-content
+  - order, flex-grow, flex-shrink, flex-basis, flex, align-self
+
 # JS
 
 - 基本类型和引用类型
@@ -267,6 +272,13 @@
   - CSS。animation: name duration timing-function delay iteration-count direction;
 
   - requestAnimationFrame()
+
+# Http2.0 与 Http1.1 区别
+
+1.  二进制格式而非文本格式。解析更高效，错误更少。
+2.  多路复用。只需要一个连接就能处理多个请求，不会线端阻塞。
+3.  报头压缩。降低开销。
+4.  服务端推送。降低延迟。
 
 # Web 安全
 
