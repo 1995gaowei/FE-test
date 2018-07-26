@@ -24,9 +24,40 @@
 			background-color: brown;
 		}
 
+		#l2 :first-child {
+			text-align: center;
+		}
+
+		div [test='tt'] {
+			text-align: left;
+		}
+
 		#l3 {
 			width: 50%;
 			background-color: blueviolet;
+		}
+
+		#triangle {
+			position: relative;
+			width: 0;
+			border: 100px solid brown;
+			border-bottom-width: 174px;
+			border-left-color: transparent;
+			border-right-color: transparent;
+			border-top-width: 0;
+			animation: 5s infinite rotate1 linear;
+			transform-origin: 100px 116px;
+		}
+
+		@keyframes rotate1 {
+			0% {
+				transform: rotate(0deg);
+				left: 0px;
+			}
+			100% {
+				transform: rotate(360deg);
+				left: 1000px;
+			}
 		}
 	</style>
 </head>
@@ -34,11 +65,13 @@
 <body>
 	<div id="l1">
 		<div id="l2">
-			<div id="l3">
-
+			<div id="l3" test="tt">
+				ttt
 			</div>
 		</div>
 	</div>
+
+	<div id="triangle"></div>
 
 	<script>
 		var l1 = document.getElementById('l1');
