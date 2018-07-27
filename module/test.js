@@ -26,13 +26,36 @@ const ajax3 = () =>
 const mergePromise = ajaxArray => {
   // 在这里实现你的代码
 
-  const promises = [];
-  ajaxArray.forEach(func => promises.push(func.apply(null)));
+  var data = [];
+  var res = Promise.resolve();
+  ajaxArray.forEach(function(ajax) {
+    res = res.then(ajax).then(res => {
+      data.push(res);
+    });
+  });
 
-  return Promise.all(promises);
+  return res.then(() => data);
 };
 
 mergePromise([ajax1, ajax2, ajax3]).then(data => {
   console.log("done");
   console.log(data); // data 为 [1, 2, 3]
 });
+
+var p1 = new Promise(resolve => {
+  console.log(1);
+  resolve(2);
+});
+
+var p2 = new Promise(resolve => {
+  console.log(3);
+  resolve(p1);
+  return 3;
+});
+p2.then(re => {
+  console.log(re);
+});
+
+// p1.then(re => {
+//   console.log(re);
+// });

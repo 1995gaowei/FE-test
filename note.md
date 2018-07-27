@@ -10,6 +10,22 @@
 
 - iframe
 
+- manifest
+
+  ```
+  CACHE MANIFEST
+  # 2012-02-21 v1.0.0
+  /theme.css
+  /logo.gif
+  /main.js
+
+  NETWORK:
+  login.asp
+
+  FALLBACK:
+  /html5/ /404.html
+  ```
+
 # CSS
 
 - 继承属性 （font, text-align, line-height, color, visibility, cursor...）
