@@ -137,20 +137,20 @@
     - 函数的 name 属性，返回函数名
     - 如果对象的方法使用了取值函数（getter）和存值函数（setter），则 name 属性不是在该方法上面，而是该方法的属性的描述对象的 get 和 set 属性上面，返回值是方法名前加上 get 和 set。
 
-      ```
-      const obj = {
-        get foo() {},
-        set foo(x) {}
-      };
+          	```
+          	const obj = {
+          		get foo() {},
+          		set foo(x) {}
+          	};
 
-      obj.foo.name
-      // TypeError: Cannot read property 'name' of undefined
+          	obj.foo.name
+          	// TypeError: Cannot read property 'name' of undefined
 
-      const descriptor = Object.getOwnPropertyDescriptor(obj, 'foo');
+          	const descriptor = Object.getOwnPropertyDescriptor(obj, 'foo');
 
-      descriptor.get.name // "get foo"
-      descriptor.set.name // "set foo"
-      ```
+          	descriptor.get.name // "get foo"
+          	descriptor.set.name // "set foo"
+          	```
 
     - bind 方法创造的函数，name 属性返回 bound 加上原函数的名字；Function 构造函数创造的函数，name 属性返回 anonymous。
 
@@ -218,3 +218,112 @@
 
     - Symbol.keyFor 方法返回一个已登记的 Symbol 类型值的 key
     - Symbol.for 为 Symbol 值登记的名字，是全局环境的，可以在不同的 iframe 或 service worker 中取到同一个值。
+
+4.  内置的 11 个 Symbol 值
+
+    - Symbol.hasInstance
+    - Symbol.isConcatSpreadable
+    - Symbol.species
+    - Symbol.match
+    - Symbol.replace
+    - Symbol.search
+    - Symbol.split
+    - Symbol.iterator
+    - Symbol.toPrimitive
+    - Symbol.toStringTag
+    - Symbol.unscopables
+
+# Set & Map
+
+1.  Set
+
+    - 属性
+      1.  Set.prototype.constructor
+      2.  Set.prototype.size
+    - 方法
+      1.  add(value)
+      2.  delete(value)
+      3.  has(value)
+      4.  clear()
+    - 遍历
+      1.  keys(), values(), entries()
+      2.  forEach()
+      3.  扩展运算符
+    - Set 结构的键名就是键值
+
+2.  Map
+
+    - 基本类似 Set，方法 -add +get +set
+    - 只有对同一个对象的引用，Map 结构才将其视为同一个键。
+
+3.  WeakSet & WeakMap
+
+    - WeakSet 的成员只能是对象，而不能是其他类型的值。
+    - WeakSet 中的对象都是弱引用，即垃圾回收机制不考虑 WeakSet 对该对象的引用，也就是说，如果其他对象都不再引用该对象，那么垃圾回收机制会自动回收该对象所占用的内存，不考虑该对象还存在于 WeakSet 之中。
+    - WeakMap 只接受对象作为键名（null 除外），不接受其他类型的值作为键名。
+    - WeakMap 的键名所指向的对象，不计入垃圾回收机制。
+    - 如果你要往对象上添加数据，又不想干扰垃圾回收机制，就可以使用 WeakMap。
+    - 没有 size, 不可遍历, 无法清空
+
+# Promise
+
+# Iterator 和 for...of 循环
+
+1.  凡是部署了 Symbol.iterator 属性的数据结构，就称为部署了遍历器接口。调用这个接口，就会返回一个遍历器对象。原生具备 Iterator 接口的数据结构
+
+    - Array
+    - Map
+    - Set
+    - String
+    - TypedArray
+    - 函数的 arguments 对象
+    - NodeList 对象
+
+# Generator 函数
+
+# async & await
+
+1.  async 对 Generator 函数的改进体现在一下四点
+
+    1.  内置执行器
+    2.  更好的语义
+    3.  更广的适用性
+        - co 模块约定，yield 命令后面只能是 Thunk 函数或 Promise 对象，而 async 函数的 await 命令后面，可以是 Promise 对象和原始类型的值（数值、字符串和布尔值，但这时等同于同步操作）。
+    4.  返回值是 Promise
+
+# Class
+
+1.  类必须使用 new 调用，否则会报错。这是它跟普通构造函数的一个主要区别，后者不用 new 也可以执行。
+
+2.  使用 Object.getPrototypeOf 方法替代\_\_proto\_\_
+
+3.  class 表达式
+
+    - 与函数一样，类也可以用表达式的形式定义
+      ```
+      const MyClass = class Me {
+        getClassName() {
+          return Me.name;
+        }
+      };
+      ```
+    - 上面代码使用表达式定义了一个类。需要注意的是，这个类的名字是 MyClass 而不是 Me，Me 只在 Class 的内部代码可用，指代当前类。
+    - 如果类的内部没用到的话，可以省略 Me，也就是可以写成下面的形式。
+
+4.  不存在变量提升
+
+5.  new.target
+
+6.  Class 的继承
+
+    - 子类必须在 constructor 方法中调用 super 方法
+
+      - ES5 的继承，实质是先创造子类的实例对象 this，然后再将父类的方法添加到 this 上面（Parent.apply(this)）。ES6 的继承机制完全不同，实质是先将父类实例对象的属性和方法，加到 this 上面（所以必须先调用 super 方法），然后再用子类的构造函数修改 this。
+
+    - 可以使用 `Object.getPropertyOf(Sub) === Sup` 判断，一个类是否继承了另一个类。
+
+    - super
+
+      - super 内部的 this 指的是子类实例
+      - super 作为对象时，在普通方法中，指向父类的原型对象
+      - 如果通过 super 对某个属性赋值，这时 super 就是 this，赋值的属性会变成子类实例的属性。
