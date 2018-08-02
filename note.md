@@ -199,7 +199,9 @@
 
   1.  - 数据属性：configurable, enumerable, value, writable
       - 访问器属性：configurable, enumerable, get, set。用于设置一个属性导致其他属性发生变化。
+
   2.  继承
+
       - 原型链：重写原型对象，代之以一个新类型的实例
         ```
         SubType.prototype  = new SuperType()
@@ -214,6 +216,10 @@
         问题：不能函数复用
       - 组合继承，将原型链和借用构造函数的技术组合
       - 寄生组合式继承
+
+  3.  instanceof
+
+      - instanceof 检测一个对象 A 是不是另一个对象 B 的实例的原理是：查看对象 B 的 prototype 指向的对象是否在对象 A 的[[prototype]]链上。
 
 - 纯函数
 
