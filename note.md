@@ -65,6 +65,8 @@
 
 - 继承属性 （font, text-align, line-height, color, visibility, cursor...）
 
+- [搞清 clientHeight、offsetHeight、scrollHeight、offsetTop、scrollTop](https://www.imooc.com/article/17571)
+
 - BFC
 
   - 如何形成
@@ -383,6 +385,8 @@
 > 有了 inheritAttrs: false 和 $attrs，你就可以手动决定这些特性会被赋予哪个元素。
 
 > 将 v-bind.sync 用在一个字面量的对象上，例如 v-bind.sync=”{ title: doc.title }”，是无法正常工作的，因为在解析一个像这样的复杂表达式的时候，有很多边缘情况需要考虑。
+
+> 函数式组件。我们标记组件为 functional，这意味它是无状态 (没有响应式数据)，无实例 (没有 this 上下文)。
 
 # React
 
