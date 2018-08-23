@@ -32,6 +32,42 @@
         $(".enter span").text(y += 1);
       });
     });
+
+    $.ajax({
+      type: 'post',
+      url: 'http://localhost:8080/',
+      contentType: 'application/json; charset=utf-8',
+      data: JSON.stringify({
+        name: 'test',
+        arr: [{ name: 'n1' }, { name: 'n2' }]
+      }),
+      success: function (res) {
+        console.log(res);
+      }
+    });
+
+    var form = new FormData();
+    form.append("name", "tt");
+
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "http://localhost:8080/t",
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Cache-Control": "no-cache",
+        "Postman-Token": "dfa70e0f-7a2c-4124-97ea-1a0f72787a6f"
+      },
+      "processData": false,
+      "contentType": false,
+      "mimeType": "multipart/form-data",
+      "data": form
+    }
+
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+    });
   </script>
 </body>
 
