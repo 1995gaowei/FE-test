@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>name</th>
+        <th>age</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>张三</td>
+        <td>17</td>
+      </tr>
+      <tr>
+        <td>李四</td>
+        <td>43</td>
+      </tr>
+      <tr>
+        <td>王五</td>
+        <td>22</td>
+      </tr>
+      <tr>
+        <td>小刘</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <td>黄三</td>
+        <td>20</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+<script>
+  function sortByAge() {
+    let tbody = document.getElementsByTagName('tbody').item(0);
+    let students = Array.from(tbody.children);
+    students.sort((s1, s2) => s1.children[1].textContent - s2.children[1].textContent);
+    let html = "";
+    for (let n of students) {
+      html += n.outerHTML;
+    }
+    tbody.innerHTML = html;
+  }
+</script>
+
+</html>
