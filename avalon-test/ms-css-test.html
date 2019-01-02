@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .img {
+        height: 200px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body ms-controller="test">
+    <div
+      ms-for="img in @imgList"
+      ms-css="{width: img.width*10/img.height, 'height': img.width*10+img.height}"
+      class="img"
+    ></div>
+  </body>
+  <script src="avalon.js"></script>
+  <script>
+    var vm = avalon.define({
+      $id: "test",
+      name: "test",
+      imgList: []
+    });
+
+    setTimeout(() => {
+      vm.imgList = [
+        {
+          width: 20,
+          color: "black",
+          height: 1
+        },
+        {
+          width: 30,
+          color: "red",
+          height: 1
+        },
+        {
+          width: 40,
+          color: "gray",
+          height: 1
+        }
+      ];
+    }, 300);
+  </script>
+</html>

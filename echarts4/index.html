@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="chart" style="width: 1200px;height: 800px;"></div>
+
+    <!-- <script src="echarts3.js"></script> -->
+    <script src="echarts4.js"></script>
+    <script src="china.js"></script>
+    <script>
+      var chart = echarts.init(document.getElementById("chart"));
+
+      var option2 = {
+        tooltip: {
+          trigger: "item"
+        },
+        legend: {
+          orient: "vertical",
+          left: "left",
+          data: ["示范省份", "非示范省份"]
+        },
+        visualMap: {
+          show: false,
+          type: "piecewise",
+          pieces: [
+            { value: 0, color: "#eee" },
+            { value: 1, color: "#2f4554" },
+            { value: 2, color: "#c23531" }
+          ]
+        },
+        series: [
+          {
+            name: "示范省份",
+            type: "map",
+            mapType: "china",
+            data: [
+              {
+                name: "内蒙古",
+                value: 2
+              },
+              {
+                name: "新疆",
+                value: 0
+              }
+            ]
+          },
+          {
+            name: "非示范省份",
+            type: "map",
+            mapType: "china",
+            data: [
+              {
+                name: "新疆",
+                value: 1
+              }
+            ]
+          }
+        ]
+      };
+
+      chart.setOption(option2);
+    </script>
+  </body>
+</html>

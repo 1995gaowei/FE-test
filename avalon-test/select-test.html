@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="fruit" ms-controller="fruit">
+      <h3>文本域与下拉框的联动</h3>
+      <input ms-duplex="@selected" />
+      <select id="id1" ms-duplex="@selected">
+        <option ms-for="el in @options" ms-attr="{value: el}">
+          {{ el }}
+        </option>
+      </select>
+
+      <select>
+        <option value="t1">t1</option>
+        <option value="t2">t2</option>
+        <option value="t3">t3</option>
+      </select>
+    </div>
+
+    <!-- <script src="avalon.js"></script> -->
+    <script src="avalon.js"></script>
+
+    <script>
+      var vm = avalon.define({
+        $id: "fruit",
+        options: [],
+        selected: ""
+      });
+
+      avalon.scan(document.getElementById("fruit"));
+
+      //延时
+      setTimeout(function() {
+        vm.options = [
+          "苹果",
+          "香蕉",
+          "桃子",
+          "雪梨",
+          "葡萄",
+          "哈蜜瓜",
+          "橙子",
+          "火龙果",
+          "荔技",
+          "黄皮"
+        ];
+        //vm.options.push("苹果", "香蕉", "桃子", "雪梨", "葡萄", "哈蜜瓜", "橙子", "火龙果", "荔技", "黄皮");
+      }, 10);
+    </script>
+  </body>
+</html>
