@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="chart" style="width: 1200px;height: 800px;"></div>
+
+    <script src="echarts3.js"></script>
+    <script>
+      var chart = echarts.init(document.getElementById("chart"));
+      var option = {
+        angleAxis: {
+          z: 3,
+          startAngle: 270,
+          max: 4
+        },
+        radiusAxis: {
+          type: "category",
+          data: [""]
+        },
+        polar: {},
+        series: [
+          {
+            type: "bar",
+            data: [1],
+            coordinateSystem: "polar",
+            name: "A"
+          },
+          {
+            type: "bar",
+            data: [2],
+            coordinateSystem: "polar",
+            name: "B"
+          },
+          {
+            type: "bar",
+            data: [3],
+            coordinateSystem: "polar",
+            name: "C"
+          }
+        ],
+        legend: {
+          show: true,
+          data: ["A", "B", "C"]
+        }
+      };
+      chart.setOption(option);
+    </script>
+  </body>
+</html>
